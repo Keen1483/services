@@ -1,0 +1,16 @@
+@use '../../../../sass/custom' as *;
+@use '../../../../sass/components/mixins' as *;
+
+.learn-more {
+    @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+
+    .lh-base {
+        font-size: 1.2rem;
+        padding: 1rem 1rem 2rem 1rem;
+
+        // white-space: pre-wrap;
+    }
+}

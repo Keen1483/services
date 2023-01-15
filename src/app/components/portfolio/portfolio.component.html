@@ -1,0 +1,34 @@
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row text-center mt-5">
+            <h1 class="display-3 fw-bold text-capitalize">latest work</h1>
+            <div class="heading-line"></div>
+            <p class="lead">Below you will see some of our work. Our services are becoming more and more important as time goes by.</p>
+        </div>
+        <!-- FILTER BUTTON -->
+        <div class="row mt-5 mb-4 g-3 text-center">
+            <div class="col-md-12">
+                <button class="btn btn-outline-primary" type="button">mobile</button>
+                <button class="btn btn-outline-primary" type="button">websites</button>
+                <button class="btn btn-outline-primary" type="button">design</button>
+                <button class="btn btn-outline-primary" type="button">mockup</button>
+            </div>
+        </div>
+
+        <!-- START THE PORTFOLIO ITEMS -->
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let portfolio of portfolios; let i = index">
+                <div class="portfolio-box shadow">
+                    <img src="./assets/images/portfolio/portfolio-{{ i + 1 }}.jpg" alt="{{ portfolio.project }} image" title="{{ portfolio.project }}" class="img-fluid">
+                    <div class="portfolio-info">
+                        <div class="caption">
+                            <h4>{{ portfolio.project }}</h4>
+                            <p>{{ portfolio.category }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

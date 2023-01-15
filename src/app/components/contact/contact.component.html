@@ -1,0 +1,51 @@
+<section id="contact" class="get-started">
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="display-3 fw-bold text-capitalize">get started</h1>
+            <div class="heading-line"></div>
+            <p class="lh-lg lead">In the <span class="text-primary">project description</span> space, write everything you think about your project.</p>
+        </div>
+
+        <!-- START THE CTA CONTENT -->
+        <div class="row text-white">
+            <div class="col-12 col-lg-6 gradient shadow p-3">
+                <div class="cta-info w-100">
+                    <h4 class="display-4 fw-bold">100% Satisfaction Guaranteed</h4>
+                    <p class="lh-lg">
+                        From the sketch, through the design and the prototypes to the final version, we will provide you daily reports to achieve the desired result. <br>
+                        At each report, we are waiting for your feedback to make an update.
+                    </p>
+                    <h3 class="display-3--brief">What will be the next step?</h3>
+                    <ul class="cta-info__list">
+                        <li>We'll prepare the proposal</li>
+                        <li>we'ill discuss it together</li>
+                        <li>let's start the discussion.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 bg-white shadow p-3">
+                <div class="form w-100 pb-2">
+                    <h4 class="display-3--title mb-5">start your project</h4>
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="row">
+                        <!-- TITLE -->
+                        <div class="form-group col-lg-12 mb-3">
+                            <input type="text" id="title" placeholder="Title project" class="form-control shadow form-control-lg" formControlName="title" minlength="5">
+                        </div>
+                        <!-- MESSAGE -->
+                        <div class="form-group col-lg-12 mb-3">
+                            <textarea name="project" id="project" placeholder="Project description" rows="8" class="form-control shadow form-control-lg" formControlName="project" minlength="10"></textarea>
+                        </div>
+                        <div class="text-center d-grid mt-1">
+                            <button type="submit"
+                                    class="btn btn-primary rounded-pill py-3"
+                                    [disabled]="contactForm.invalid">
+                                submit
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

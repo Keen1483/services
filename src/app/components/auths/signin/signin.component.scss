@@ -1,0 +1,47 @@
+@use '../../../../sass/custom' as *;
+@use '../../../../sass/components/mixins' as *;
+
+.signin {
+    @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.email, .pwd {
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+        padding: 1rem;
+    }
+}
+.email {
+    @include media-breakpoint-up(lg) {
+        border-right: 1px solid $gray-400;
+    }
+}
+
+@keyframes input-shake {
+    25% {
+        transform: translateX(1%);
+    }
+    75% {
+        transform: translateX(-1%);
+    }
+}
+
+.form-control:not(:focus):invalid {
+    background-color: $danger;
+    color: $white;
+    animation: input-shake 100ms ease-in-out 2;
+}
+
+.signup-link {
+    font-size: 1.2rem;
+    color: $primary;
+    
+    a {
+        display: inline-block;
+        padding-right: 1rem;
+    }
+}

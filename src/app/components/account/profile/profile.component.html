@@ -1,0 +1,27 @@
+<div class="account__content">
+    <div class="d-flex">
+        <div class="box-left">
+            <img *ngIf="photoUser" src="{{ user.photo }}" alt="default photo profile" class="img-fluid rounded-circle">
+            <img *ngIf="!photoUser" src="./assets/images/default-profile.png" alt="default photo profile" class="img-fluid rounded-circle">
+        </div>
+        
+        <div *ngIf="username" class="box-right">
+            <p class="this.text-center fw-bold">{{ username }}</p>
+        </div>
+        <div *ngIf="!username" class="box-right">
+            <p class="text-center">User name</p>
+        </div>
+    </div>
+</div>
+
+<div class="box-bottom mt-5">
+    <p>
+        <span>Email address : </span> {{ email }}
+    </p>
+    <p>
+        <span>first name : </span> {{ firstName }}
+    </p>
+    <p>
+        <span>last name : </span> {{ lastName }}
+    </p>
+</div>

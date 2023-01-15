@@ -1,0 +1,17 @@
+
+
+
+@keyframes input-shake {
+    25% {
+        transform: translateX(1%);
+    }
+    75% {
+        transform: translateX(-1%);
+    }
+}
+
+.form-control:not(:focus):invalid {
+    background-color: #b20a37;
+    color: white;
+    animation: input-shake 100ms ease-in-out 2;
+}

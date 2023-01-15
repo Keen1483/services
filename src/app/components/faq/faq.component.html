@@ -1,0 +1,117 @@
+<section id="faq" class="faq">
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="display-3 fw-bold text-uppercase">faq?</h1>
+            <div class="heading-line"></div>
+            <p class="lead">
+                frequently asked questions, get knowledge before hand
+            </p>
+        </div>
+        <!-- ACCORDION CONTENT -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <!-- ACCORDION ITEM 1 -->
+                    <div class="accordion-item shadow mb-3">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How much does it cost to build a mobile or web application?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <strong>The cost of building a mobile or web application</strong> depends on its content and type.
+                            Marketing applications, blogs and portfolios are generally less expensive, because their database is very simple.
+                            The cost of building a website depends on the type of database needed.
+                            For a mobile application that will be run on several operating systems, the number of operating systems required is equal to the number of applications to build, which increases the cost of realization compared to the same application running on a single operating system.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ACCORDION ITEM 2 -->
+                    <div class="accordion-item shadow mb-3">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How do you deliver the projects?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                First we send you a video that shows how to test the application. Then we send you the download links for the project and all the tools you need to run it.
+                                For the designs, we send you all the recommended images of different sizes and the project file.
+                                The mobile and web applications are delivered with an environment that allows you to test it without any knowledge of a developer.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ACCORDION ITEM 3 -->
+                    <div class="accordion-item shadow mb-3">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Do you build e-commerce applications?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                We build e-commerce applications of several categories. Product marketing applications with prices and a friendly chat room between the customer and the seller.
+                                Complete e-commerce applications with payment systems and an administration interface.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ACCORDION ITEM 4 -->
+                    <div class="accordion-item shadow mb-3">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How long does it take to complete the projects?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                The completion time depends on the content and type of project.
+                                If the realization of your application goes from the initial design to the deployment, the duration of the realization of the designs (logo, icon, mock-up, ...) will be included in addition to the duration of the realization of the application.
+                                If your application is a marketing application, the realization time will be very short.
+                                If your application contains a product registration system in different categories with an administration interface, the realization time will be longer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ASK YOUR QUESTIONS -->
+        <div class="row mt-3 text-center">
+            <div class="col-sm-12">
+                <button type="button" class="rounded-pill btn-rounded text-capitalize border-primary ask-question">
+                    ask your questions?
+                </button>
+            </div>
+            <div class="col-sm-12 mt-3 question">
+                <form [formGroup]="faqForm" (ngSubmit)="onSubmit()">
+                    <div formArrayName="questions" *ngFor="let creds of getQuests().controls; let i = index">
+                        <ng-container [formGroupName]="i">
+                            <div class="input-group mb-3">
+                                <input type="text"
+                                class="form-control shadow form-control-lg" placeholder="Question {{ i + 1 }}"
+                                formControlName="question"
+                                aria-describedby="button-addon2"
+                                minlength="4">
+                                <button type="button"
+                                        class="btn btn-outline-secondary" id="button-addon2"
+                                        (click)="onDeleteQuests(i)">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <i class="bi bi-plus-circle add-question" (click)="onAddQuests()"></i>
+
+                    <div class="text-center d-grid mt-1">
+                        <button type="submit"
+                                class="btn btn-primary rounded-pill py-3"
+                                [disabled]="faqForm.invalid">
+                            submit
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

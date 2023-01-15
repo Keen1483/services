@@ -1,0 +1,10 @@
+
+@use '../../../sass/custom' as *;
+@use '../../../sass/components/mixins' as *;
+
+.become-affiliate {
+    @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+}

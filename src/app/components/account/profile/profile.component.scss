@@ -1,0 +1,79 @@
+.account__content {
+    position: relative;
+    height: 25%;
+    width: 100%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    margin: 0 0 5rem 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 37vh;
+        margin: auto;
+        background: white;
+        // transform-origin: 0% 0%;
+        transform: rotate(60deg) translate(-30%, -70%);
+        left: 5%;
+        z-index: -999;
+
+        @media (min-width: 992px) {
+            height: 100vh;
+            
+            transform: rotate(60deg) translate(-50%, -50%);
+            left: 10%;
+            top: -10%;
+        }
+    }
+}
+
+.d-flex {
+    height: 100%;
+}
+
+.box-left {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 7rem;
+        height: 7rem;
+        position: absolute;
+        border: 0.325rem solid rgba(#9926f0, 0.7);
+
+        @media (min-width: 768px) {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+}
+
+.box-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-bottom {
+    color: white;
+    font-size: 1.1rem;
+
+    p {
+        margin-bottom: 2rem;
+    }
+
+    span {
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+}

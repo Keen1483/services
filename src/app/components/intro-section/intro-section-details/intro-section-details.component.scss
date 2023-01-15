@@ -1,0 +1,64 @@
+
+@use '../../../../sass/custom' as *;
+@use '../../../../sass/components/mixins' as *;
+
+.get-in-touch {
+    @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+
+    .display-2--description {
+
+        a {
+            color: $white;
+            &:hover {
+                color: $purple-light;
+            }
+        }
+    }
+}
+
+.main-left, .main-right {
+    span {
+        font-size: 1.2rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: 2rem;
+    }
+    @include media-breakpoint-up(lg) {
+        max-width: 50%;
+    }
+}
+
+.main-left {
+
+    @include media-breakpoint-up(lg) {
+        border-right: .1rem solid $gray-300;
+        padding: 0 5rem 0 0;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 0rem;
+        padding-bottom: 0;
+    }
+}
+.main-right {
+    padding-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+        padding: 0 0 0 5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+            padding-left: 0;
+
+            span {
+                margin-left: 0.6rem;
+            }
+        }
+    }
+}

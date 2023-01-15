@@ -1,0 +1,16 @@
+<div class="mails">
+    <div class="d-grid gap-3">
+        <div class="p-2 bg-light shadow-lg" *ngFor="let mail of mails">
+            <div *ngFor="let str of mail.project | slice:0:1;">
+                <div>
+                    <p>
+                        {{ str }}
+                    </p>
+                    <p class="text-end">
+                        <a class="text-decoration-none" routerLink="{{ getUrlMail(mail.title) }}">More details</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

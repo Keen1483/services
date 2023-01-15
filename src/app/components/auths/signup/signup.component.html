@@ -1,0 +1,83 @@
+<section class="signup">
+    <div class="container">
+        <div class="row align-items-center text-white">
+            <h1 class="display-2 text-center">
+                <span class="display-2--intro">Sign up now</span>
+            </h1>
+        </div>
+        
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,32L48,69.3C96,107,192,181,288,181.3C384,181,480,107,576,106.7C672,107,768,181,864,218.7C960,256,1056,256,1152,218.7C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+<section class="form">
+    <div class="container">
+        <div class="row">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="d-lg-flex">
+                    <!-- REQUIRED -->
+                    <div class="required">
+                        <div class="text-center">
+                            <h1 class="display-5 fw-bold text-capitalize">required</h1>
+                            <div class="heading-line"></div>
+                        </div>
+                        <!-- EMAIL -->
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Email address" id="email" class="form-control shadow form-control-lg" formControlName="email">
+                        </div>
+                        <!-- PASSWORD -->
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="password" id="password" class="form-control shadow form-control-lg" formControlName="password" minlength="6">
+                        </div>
+                        <!-- CONFIRM PASSWORD -->
+                        <div class="form-group mb-3">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" placeholder="Confirm password" id="confirmPassword" class="form-control shadow form-control-lg" formControlName="confirmPassword" minlength="6">
+                            <div *ngIf="submitted && !check" class="text-danger fst-italic mt-2">
+                                Confirm Password does not match
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OPTIONAL -->
+                    <div class="optional">
+                        <div class="text-center">
+                            <h1 class="display-5 fw-bold text-capitalize">optional</h1>
+                            <div class="heading-line"></div>
+                        </div>
+                        <!-- USERNAME -->
+                        <div class="form-group mb-3">
+                            <label for="username">User Name</label>
+                            <input type="text" placeholder="User Name" id="username" class="form-control shadow form-control-lg" formControlName="username" minlength="2">
+                        </div>
+                        <!-- FIRST NAME -->
+                        <div class="form-group mb-3">
+                            <label for="firstName">First Name</label>
+                            <input type="text" placeholder="First Name" id="firstName" class="form-control shadow form-control-lg" formControlName="firstName" minlength="2">
+                        </div>
+                        <!-- LAST NAME -->
+                        <div class="form-group mb-3">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" placeholder="Last Name" id="lastName" class="form-control shadow form-control-lg" formControlName="lastName" minlength="2">
+                        </div>
+                        <!-- PHOTO -->
+                        <div class="form-group mb-3">
+                            <label for="photo">Photo</label>
+                            <input type="file" (change)="onDetectImage($event)" placeholder="Photo" id="photo" accept="image/png, image/jpeg" class="form-control shadow form-control-lg">
+                            <p *ngIf="imageUploaded">Photo uploaded</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center d-grid mt-1">
+                    <button type="submit"
+                            class="btn btn-primary rounded-pill py-3"
+                            [disabled]="userForm.invalid || imageUploading">
+                        submit
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
